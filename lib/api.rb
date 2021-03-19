@@ -1,13 +1,9 @@
-require 'uri'
-require 'net/http'
-require 'openssl'
-require 'json'
-require 'pry'
+require_relative '../config/environment.rb'
 
-require_relative 'pokemon'
+require_relative '../lib/pokemon.rb'
+
 
 class Api 
-
     
     url = URI("https://pokemon-go1.p.rapidapi.com/pokemon_stats.json")
     
@@ -21,16 +17,13 @@ class Api
     
     response = http.request(request)
     results_array = JSON.parse(response.body, symbolize_names: true)
-    # puts response.read_body
 
-    def self.load_pokemon(results_array)
-        results_array.each do |pokemon|
-            pokemon = Pokemon.new
-            pokemon
+
+    results_array.each do |pokemon|
+        if pokemon[:form] == "Normal"
+            Pokemon.new(pokemon)
         end
     end 
-    # results_hash[0][:pokemon_id]
-    
-
 end
-binding.pry
+
+
