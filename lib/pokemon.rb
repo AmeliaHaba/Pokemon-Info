@@ -4,7 +4,7 @@ class Pokemon # object class- anything having to do with object
 
     @@all = []
 
-        def initialize(pokemon)
+        def initialize(pokemon) # instance method
             @name = pokemon[:pokemon_name]
             @id = pokemon[:pokemon_id]
             @base_attack = pokemon[:base_attack]
