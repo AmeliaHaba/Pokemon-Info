@@ -58,10 +58,12 @@ If you would like to learn about another Pokemon choose a number 1-20 or type ex
 
 
 **License**
+
 This program is licensed under the MIT License. The license file has been included. https://opensource.org/licenses/MIT
 
 
 **Contribute**
+
 To contribute to this program submit or a pull request or a new issue.
 
 
